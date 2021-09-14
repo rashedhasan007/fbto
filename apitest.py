@@ -2,7 +2,6 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-@app.route('/getmsg/', methods=['GET'])
 books = [
     {'id': 0,
      'title': 'A Fire Upon the Deep',
@@ -21,6 +20,7 @@ books = [
      'published': '1975'}
 ]
 
+@app.route('/getmsg/', methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
     name = request.args.get("name", None)
